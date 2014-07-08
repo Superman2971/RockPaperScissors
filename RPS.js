@@ -1,7 +1,15 @@
 $(document).ready(function(){
 
-//Global variable
+// Show scorecard after user click
+$("div").click(function(){
+	$("section").css("display","block");
+});
+
+//Global variables
 window.computerChoice = "";
+window.num_wins = 0;
+window.num_losses = 0;
+window.num_ties = 0;
 
 // Computer choice selection logic
 function CompsChoice(){
@@ -44,40 +52,58 @@ function CompsChoice(){
 	});
 
 function win(){
-	$(".answer").text("You Win!")
+	$(".answer").text("You Win!");
+	num_wins += 1;
+	score();
 };
 
 function lose(){
-	$(".answer").text("You Lose!")
+	$(".answer").text("You Lose!");
+	num_losses += 1;
+	score();
 };
 
 function tie(){
-	$(".answer").text("You Tie!")
+	$(".answer").text("You Tie!");
+	num_ties += 1;
+	score();
 };
 
 function compRock(){
 	$(".rock").css("background-color","red");
 	setInterval(function(){
 		$(".rock").css("background-color", "")
-	}, 2000);
+	}, 1000);
 };
 
 function compPaper(){
 	$(".paper").css("background-color","red");
 	setInterval(function(){
 		$(".paper").css("background-color", "")
-	}, 2000);
+	}, 1000);
 };
 
 function compScissors(){
 	$(".scissors").css("background-color","red");
 	setInterval(function(){
 		$(".scissors").css("background-color", "")
-	}, 2000);
+	}, 1000);
 };
 
-// Need to add the Winner output (How does it show on screen? CSS maybe = addClass)
-// Just need to switch out for the alert functions
+$("button").click(function(){
+	num_wins = 0;
+	num_losses = 0;
+	num_ties = 0;
+	score();
+});
+
+function score(){
+	document.getElementById("num_wins").innerHTML= num_wins;
+	document.getElementById("num_losses").innerHTML= num_losses;
+	document.getElementById("num_ties").innerHTML= num_ties;
+};
+
+// Make the Answer text animate onto the screen (spin and grow big)
 
 //Idea: Same color squares with word and image inside. Box color changes via selection (blue)
 // Box color also changes for comp choice (red), and for tie (green)
