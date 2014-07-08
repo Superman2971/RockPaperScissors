@@ -3,6 +3,7 @@ body {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
+	font-family: 'Permanent Marker', cursive, sans-serif;
 }
 div {
 	text-align: center;
@@ -32,13 +33,17 @@ div {
 }
 section {
 	display: none;
+	font-family: 'Russo One', sans-serif;
 }
 ul {
 	list-style-type: none;
+	margin-left: -45px;
 }
 .header{
+	font-family: 'Russo One', sans-serif;
 	width: auto;
 	font-size: 26px;
+	height: auto;
 }
 .rock {
 	border: 2px solid black;
