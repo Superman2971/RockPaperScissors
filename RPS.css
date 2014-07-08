@@ -1,0 +1,25 @@
+body {
+	text-align: center;
+}
+div {
+	text-align: center;
+	margin: 0 auto;
+	height: 100px;
+	width: 100px;
+}
+.header{
+	width: auto;
+	font-size: 26px;
+}
+.rock {
+	border: 2px solid black;
+	display: inline-block;
+}
+.paper {
+	border: 2px solid black;
+	display: inline-block;
+}
+.scissors {
+	border: 2px solid black;
+	display: inline-block;
+}
