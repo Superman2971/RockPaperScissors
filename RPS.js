@@ -13,38 +13,34 @@ function CompsChoice(){
 	} else {
 		computerChoice = "scissors";
 	}
-	alert("The computer chose: " + computerChoice)
 	};
 
 // recognizes when items are clicked (user choice + winner logic)
 	$(".rock").click(function(){
-		alert("Rock!");
 		CompsChoice();
 			if (computerChoice === "rock") {
-				alert("TIE!"); tie(); compRock()
+				tie(); compRock()
 			} else if (computerChoice === "paper") {
-				alert("LOSE!"); lose(); compPaper()
-			} else { alert("WINNER!"); win(); compScissors() };
+				lose(); compPaper()
+			} else { win(); compScissors() };
 	});
 
 	$(".paper").click(function(){
-		alert("Paper!");
 		CompsChoice();
 			if (computerChoice === "rock") {
-				alert("WINNER!"); win(); compRock()
+				win(); compRock()
 			} else if (computerChoice === "paper") {
-				alert("TIE!"); tie(); compPaper()
-			} else { alert("LOSE!"); lose(); compScissors() };
+				tie(); compPaper()
+			} else { lose(); compScissors() };
 	});
 
 	$(".scissors").click(function(){
-		alert("Scissors!");
 		CompsChoice();
 			if (computerChoice === "rock") {
-				alert("LOSE!"); lose(); compRock()
+				lose(); compRock()
 			} else if (computerChoice === "paper") {
-				alert("WINNER!"), win(); compPaper()
-			} else { alert("TIE!"), tie(); compScissors() };
+				win(); compPaper()
+			} else { tie(); compScissors() };
 	});
 
 function win(){
@@ -63,21 +59,21 @@ function compRock(){
 	$(".rock").css("background-color","red");
 	setInterval(function(){
 		$(".rock").css("background-color", "")
-	}, 1000);
+	}, 2000);
 };
 
 function compPaper(){
 	$(".paper").css("background-color","red");
 	setInterval(function(){
 		$(".paper").css("background-color", "")
-	}, 1000);
+	}, 2000);
 };
 
 function compScissors(){
 	$(".scissors").css("background-color","red");
 	setInterval(function(){
 		$(".scissors").css("background-color", "")
-	}, 1000);
+	}, 2000);
 };
 
 // Need to add the Winner output (How does it show on screen? CSS maybe = addClass)
@@ -86,6 +82,8 @@ function compScissors(){
 //Idea: Same color squares with word and image inside. Box color changes via selection (blue)
 // Box color also changes for comp choice (red), and for tie (green)
 // Then add the winner at the bottom = this should be a function for win() lose() tie()
+
+//Add in the score = counts your win, lose, tie
 
 });
 

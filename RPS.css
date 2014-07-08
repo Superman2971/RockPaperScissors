@@ -14,12 +14,15 @@ div {
 .rock {
 	border: 2px solid black;
 	display: inline-block;
+	cursor: pointer
 }
 .paper {
 	border: 2px solid black;
 	display: inline-block;
+	cursor: pointer
 }
 .scissors {
 	border: 2px solid black;
 	display: inline-block;
+	cursor: pointer
 }
