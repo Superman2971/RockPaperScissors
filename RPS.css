@@ -10,6 +10,21 @@ div {
 	height: 100px;
 	width: 100px;
 }
+#rock {
+	background: url('rps_sprite.png') no-repeat 0 -1px;
+	width: 76px;
+	height: 65px;
+}
+#paper {
+	background: url('rps_sprite.png') no-repeat -90px -1px;
+	width: 75px;
+	height: 65px;
+}
+#scissors {
+	background: url('rps_sprite.png') no-repeat -179px -1px;
+	width: 76px;
+	height: 65px;
+}
 .rock:hover,.paper:hover,.scissors:hover {
 	-webkit-box-shadow:inset 0px 0px 0px 3px yellow;
     -moz-box-shadow:inset 0px 0px 0px 3px yellow;
@@ -39,4 +54,24 @@ ul {
 	border: 2px solid black;
 	display: inline-block;
 	cursor: pointer;
+}
+div .answer {
+	display: block;
+	z-index: 10;
+}
+.anim {
+	transform-origin: bottom bottom;
+	-webkit-transform-origin: bottom bottom;
+	animation: grow 1s infinite;
+	-webkit-animation: grow 1s infinite;
+}
+@keyframes grow {
+	0%{transform:rotate(0deg); font-size: 30px;}
+	50%{transform:rotate(360deg); font-size: 200px;}
+	100%{transform:rotate(720deg); font-size: 30px;}
+}
+@-webkit-keyframes grow {
+	0%{-webkit-transform:rotate(0deg); font-size: 30px;}
+	50%{-webkit-transform:rotate(360deg); font-size: 200px;}
+	100%{-webkit-transform:rotate(720deg); font-size: 30px;}
 }

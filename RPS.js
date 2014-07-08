@@ -23,7 +23,7 @@ function CompsChoice(){
 	}
 	};
 
-// recognizes when items are clicked (user choice + winner logic)
+// Recognizes when items are clicked (user choice + winner logic)
 	$(".rock").click(function(){
 		CompsChoice();
 			if (computerChoice === "rock") {
@@ -51,24 +51,29 @@ function CompsChoice(){
 			} else { tie(); compScissors() };
 	});
 
+// Functions for the win/lose/tie text
 function win(){
 	$(".answer").text("You Win!");
 	num_wins += 1;
 	score();
+	animate();
 };
 
 function lose(){
 	$(".answer").text("You Lose!");
 	num_losses += 1;
 	score();
+	animate();
 };
 
 function tie(){
 	$(".answer").text("You Tie!");
 	num_ties += 1;
 	score();
+	animate();
 };
 
+// Computer choice is highlighted in red for 1 second
 function compRock(){
 	$(".rock").css("background-color","red");
 	setInterval(function(){
@@ -90,6 +95,7 @@ function compScissors(){
 	}, 1000);
 };
 
+// Reset button
 $("button").click(function(){
 	num_wins = 0;
 	num_losses = 0;
@@ -97,10 +103,19 @@ $("button").click(function(){
 	score();
 });
 
+// Score adding
 function score(){
 	document.getElementById("num_wins").innerHTML= num_wins;
 	document.getElementById("num_losses").innerHTML= num_losses;
 	document.getElementById("num_ties").innerHTML= num_ties;
+};
+
+// Function for the answer animation
+function animate(){
+	$(".answer").addClass("anim");
+	setTimeout(function(){
+		$(".answer").removeClass("anim");
+	}, 1000);
 };
 
 // Make the Answer text animate onto the screen (spin and grow big)
